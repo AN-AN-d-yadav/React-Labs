@@ -1,36 +1,38 @@
-import React from "react";
+import React, { useState } from 'react'
 
 function App() {
+
+  const submitHandler = (e)=>{
+    e.preventDefault()
+   
+  };
+
+  const [name , setName] = useState("hello")
+
+  const textupdate= (e)=>{
+
+
+    // if this 
+    // if this 
+    // if this 
+    // use validation
+   setName(e.target.value)
+
+    console.log(name)
+  }
+
   return (
     <>
-      <div className="container-fluid">
-
-        <div className="row">
-          <div className="col-sm-12 bg-info p-3">
-            navigation bar
-          </div>
-        </div>
-
-        <div className="row h-25">
-          <div className="col-sm-12 bg-danger h-100">
-            header
-          </div>
-        </div>
-
-        <div className="row h-75">
-          <div className="col-sm-6 bg-secondary ">left</div>
-          <div className="col-sm-6 bg-dark">right</div>
-        </div>
-
-        <div className="row h-25">
-          <div className="col-sm-12 bg-warning">
-            footer
-          </div>
-        </div>
-
-      </div>
+      <form onSubmit={submitHandler}>
+        <input type="text" placeholder='enter your name ' onChange={textupdate} /> <br />
+        <button type="submit">submit</button>
+      </form>
+      <h1>the name is {name} </h1>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
+
+
+// variable  -> ui 
